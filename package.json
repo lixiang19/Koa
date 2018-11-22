@@ -20,8 +20,10 @@
     "bluebird": "^3.5.0",
     "cloudinary": "^1.8.0",
     "glob": "^7.1.2",
+    "jsonwebtoken": "^8.4.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-jwt": "^3.5.1",
     "koa-logger": "^2.0.1",
     "koa-router": "^7.1.1",
     "koa-session": "^5.0.0",
@@ -31,6 +33,7 @@
     "qiniu": "^6.1.13",
     "sha1": "^1.1.1",
     "speakeasy": "^2.0.0",
+    "tracer": "^0.9.1",
     "uuid": "^3.0.1",
     "xss": "^0.3.3"
   },
