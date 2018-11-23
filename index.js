@@ -5,6 +5,7 @@ const { connect, initSchemas } = require('./models/init')
 const bodyParser = require('koa-bodyparser')
 const cors = require('koa2-cors')
 const routers = require('./router/index')
+
 app.use(bodyParser())
 app.use(cors())
 app.use(require('./middleware/response.js'))

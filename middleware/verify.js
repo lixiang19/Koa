@@ -8,7 +8,6 @@ module.exports = async (ctx, next) => {
       const token = ctx.header.authorization
       if (token) {
         let payload = await verify(token.split(' ')[1], 'my_token')
-        console.log(payload)
         ctx.user = {
           name: payload.name,
           _id: payload._id
