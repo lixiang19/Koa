@@ -8,8 +8,5 @@
 const router = require('koa-router')()
 
 const timeRiverController = require('../controller/timeRiver')
-router.get('/dayList/list', timeRiverController.getSomeday)
-router.post('/dayList/list', timeRiverController.newDay)
-router.put('/dayLIst/list', timeRiverController.updateDay)
-
+router.get('/list', timeRiverController.getSomeday)
 module.exports = router

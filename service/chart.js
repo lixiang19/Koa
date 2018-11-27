@@ -1,10 +1,3 @@
-/*
- * @Author: lixiang
- * @Date: 2018-09-13 15:45:38
- * @LastEditors: lixiang
- * @LastEditTime: 2018-11-27 17:30:42
- * @Description: 时间流数据库操作
- */
 const mongoose = require('mongoose')
 const eventSchema = require('../models/event/event')
 const timeRiver = {
@@ -16,9 +9,14 @@ const timeRiver = {
    * @param {*} data 日期字符串
    * @returns 对象数组
    */
-  async getSomeday (userDoc, data) {
+  async getDateTagList (userDoc, date, tag) {
     let EventList = mongoose.model(userDoc, eventSchema)
-    let result = await EventList.find({'date': data}).sort({'startTime': 1})
+    let result = await EventList.find({$and: [{'date': date}, {'tag': tag}]})
+    return result
+  },
+  async getTagList (userDoc, tag) {
+    let EventList = mongoose.model(userDoc, eventSchema)
+    let result = await EventList.find({'tag': tag})
     return result
   }
 }

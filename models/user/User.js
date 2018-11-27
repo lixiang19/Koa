@@ -5,12 +5,45 @@ const bcrypt = require('bcrypt')
 const SALT_WORK_FACTOR = 10
 
 const userSchema = new Schema({
-  UserId: {type: ObjectId},
+  UserId: ObjectId,
   userName: {unique: true, type: String},
   password: String,
   createAt: {type: Date, default: Date.now()},
   lastLoginAt: {type: Date, default: Date.now()},
-  tags: {}
+  tags: [{
+    name: String,
+    tagId: ObjectId,
+    icon: String,
+    children: [
+      {
+        name: String,
+        tagId: ObjectId,
+        icon: String,
+        children: [
+          {
+            name: String,
+            tagId: ObjectId,
+            icon: String,
+            children: [
+              {
+                name: String,
+                tagId: ObjectId,
+                icon: String,
+                children: [
+                  {
+                    name: String,
+                    tagId: ObjectId,
+                    icon: String,
+                    children: []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
 }, {
   collection: 'user'
 })
